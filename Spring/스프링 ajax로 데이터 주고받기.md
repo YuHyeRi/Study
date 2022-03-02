@@ -94,4 +94,5 @@ jquery를 이용하여 form값을 Controller로 넘겨주도록 프로그래밍 
 
 실행결과 확인 시, str1에는 myid가 str2에는 mypwd가 할당됨을 알 수 있다.
 
+#### 👉 출처 : https://ttuk-ttak.tistory.com/21
 #### 👉 노션링크 : https://www.notion.so/ajax-e2ae2c903c354e6e886f3a4f0c384c3e
