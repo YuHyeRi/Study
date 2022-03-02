@@ -36,4 +36,4 @@
 
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2901b09c-0d3c-48d6-911b-7c2de0516b3c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220201T024642Z&X-Amz-Expires=86400&X-Amz-Signature=e5e50e95b9e02d13596b3fb8e83d7d4b8d515c8934f91c4b29ceb937ffb98df7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
-👉 #### 노션링크 : https://www.notion.so/SQL-DB-1959bb8c4bfd49e9b4209ebd3dfd2a74
+#### 👉 노션링크 : https://www.notion.so/SQL-DB-1959bb8c4bfd49e9b4209ebd3dfd2a74
