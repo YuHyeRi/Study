@@ -338,5 +338,5 @@
     
 
 끝-
-
+#### 👉 출처 : https://yejip.com/web/2020-12-14-ajax1/
 #### 👉 노션링크 : https://www.notion.so/ajax-8ef7ddf915d249008bca89c6ef002f13
