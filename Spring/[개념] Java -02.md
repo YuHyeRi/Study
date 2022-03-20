@@ -19,7 +19,6 @@
 - 오브젝트(Object)만 할당 가능하다.
 - 추가 및 삭제가 빠르다 (→ pointer로 Sequential access를 하기 때문에)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a9039ea8-4ae4-4de2-b91e-ff2c9b3c99f8/Untitled.png)
 
 ### Q. String, StringBuffer, StringBuilder의 차이는?
 
@@ -31,7 +30,6 @@
     → StringBuilder는 StringBuffer보다 빠르다.
     
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fb9e4eec-c081-4446-a255-961c5cf5cb23/Untitled.png)
 
 ### Q. 기본 접근제어자(default)와 protect 접근 제어자의 차이는?
 
@@ -57,7 +55,6 @@ protected는 default와 동일하지만, ***protected*** 클래스를 상속한 
 - Null을 허용하지 않는다.
 - 성능이 비교적 느리다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/665edf44-86be-4083-8a60-636da5ce7e29/Untitled.png)
 
 (*정렬 순서를 유지하고 싶을 경우에는 키값이 트리구조 기반인 TreeMap / 노드가 포인터값을 포함하는 LikedHashMap도 사용을 고려할 수 있다. 다만 이 경우에는 get() 으로 호출시 시간복잡도가 O(logn), O(n)으로 호출 속도가 저하되는 것이 단점이다. 해쉬맵은 키를 해쉬값으로 호출함으로 O(1)이다.)
 
@@ -87,7 +84,6 @@ protected는 default와 동일하지만, ***protected*** 클래스를 상속한 
 
 순서를 보장하는 데이터 집합이 필요하다면 → ***HashLinkedSet***
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89f05b7f-a4b3-4492-af3e-02d830fd5430/Untitled.png)
 
 ### Q. 자바 컬렉션이란?
 
@@ -114,7 +110,6 @@ Sorted : 객체 속성에 따라 내부적으로 정렬함
 1. ***Map -맵***
 - 분별자(Key)가 고유한 값을 가지는 자료구조로, Key는 중복되어서는 안 된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca52b954-7923-4d06-87a5-dd05b11c4aa3/Untitled.png)
 
 ### Q. 예외(Exception)란?
 
@@ -160,7 +155,69 @@ Sorted : 객체 속성에 따라 내부적으로 정렬함
 3. ***클래스*** : 클래스가 final로 선언되면 상속될 수 없다.
 4. ***생성자*** : 생성자는 final이 될 수 없다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5717a0f2-645f-466c-9eff-cd37238f5a20/Untitled.png)
+### Q. 자바의 기본형 데이터 타입 / 참조형 데이터 타입
+
+***🟣 기본형 데이터 타입***
+
+boolean, char, byte, short, int, long, float, double
+
+(*32비트 환경에서 char형은 2바이트, byte형은 1바이트, short형은 2바이트, int형은 4바이트, long형은 8바이트, float은 4바이트, 더블은 8바이트)
+
+🟣 ***참조형 데이터 타입*** → 객체의 주소를 저장하고 참조하는 타입
+
+class, array(배열), enum(열거), interface
+
+### Q. OOP란?
+
+Object-Oriented Programming의 약자로 ‘ ***객체 지향 프로그래밍 언어*** ‘ 를 뜻하며 부품에 해당하는 객체들을 먼저 만들고 이것들을 하나씩 조립, 연결하여 전체 프로그램을 완성하는 기법
+
+### Q. 캡슐화란?
+
+캡슐화는 객체에 대한 관련 데이터들과 행위를 하나로 묶어 ***외부에 노출되지 않도록*** 은닉하는 것. 캡슐화를 하면 객체의 사용자로부터 정보 은폐가 가능하며 객체를 포함한 정보의 손상과 오용을 막을 수 있다. 또한 처리된 결과만 사용하므로 객체의 이식성이 좋다. 
+
+### Q. 다형성이란?
+
+다형성이란 동일한 부모 클래스 타입을 상속받은 후손 클래스 타입들을 부모타입으로 처리하는 기술이다. 이 다형성을 지원하기 위해서는 **동적 바인딩**이 필수다. 동적 바인딩이란 부모타입으로 참조되는 후손객체의 오버라이딩 메소드에 적용되며, 컴파일 시에는 부모의 메소드를 정적 바인딩 해두었다가 프로그램이 실행될 때 참조하는 후손의 오버라이딩 메소드로 연결을 바꾸어 실행하는 것이다.
+
+### Q. 상속이란?
+
+기존의 클래스를 재사용하여 새로운 클래스를 작성하는 것이다.
+
+- 장점 : 코드의 재사용성을 높이고 중복을 제거하여 생산성 향상과 보다 편한 유지보수가 가능
+- 단점 : 굳이 말하자면, 상속 받은 부모클래스 변형 시, 자식클래스도 동일하게 변형되어 개별적으로 수정이 불가능
+
+### Q. class, instance ?
+
+- ***class*** : 실제로 존재하는 객체들의 공통점을 추상화하는 것
+- ***instance*** : 추상화 된 개념을 실재하도록 하는 것. class를 instance화 한 것을 인스턴스(객체).
+
+### Q. thread와 thread를 구현하기 위한 인터페이스, 클래스
+
+thread는 프로세스 내에서 실행되는 세부 작업의 단위이다.
+
+thread를 구현하기 위한 인터페이스는 Runnable이며, 클래스는 Thread.
+
+### Q. static
+
+변수에 static을 적용하면 같은 클래스 타입의 객체들이 공유할 수 있는 클래스 변수가 된다. static 메소드는 객체에 의존적이지 않은 작업을 수행할 수 있다. 클래스명을 통한 메소드 호출이 가능하다. 오버라이딩도 되지 않으며, 상속받은 클래스에서 사용할 수 없다.
+
+(+ 클래스가 초기화될 때 수정되고 main()메소드보다 먼저 수행되는 static 초기화 블록으로도 사용가능)
+
+### Q. 제네릭
+
+클래스 내부에서 사용할 데이터 타입을 인스턴스가 생성될 때 확정하도록 하는 것.
+
+### Q. 배열과 ArrayList의 차이는?
+
+- ***배열*** : 같은 타입의 데이터를 연속된 공간에 나열시키고 ***각 데이터에 인덱스를 부여***해놓은 자료 구조
+- ***ArrayList*** : 배열의 구조를 가지고 있으나, 기본배열과는 다르게 기존의 인덱스를 부여해놓고 그 인덱스 안의 값을 저장하는 것이 아니라, 입력시킨 값만큼의 인덱스를 생성하여 배열이 되는 구조
+
+### Q. Stack, ArrayList, List 차이는?
+
+- ***Stack*** : List 인터페이스를 구현한 Vector 클래스를 상속받아 구현한 클래스이다. Stack은 LIFO(선입후출) 알고리즘이 적용된 자료구조이다.
+- ***List*** : 자바 컬렉션 프레임워크에서 제공되는 인터페이스 중 하나로 데이터의 순서를 지정하는 인덱스와 데이터로 구성되는 자료구조이다.
+- ***ArrayList*** : List 인터페이스를 인스턴스화 할 수 있도록 구현한 클래스 중 하나이다.
 
 👉 노션 : https://www.notion.so/Java-02-e094ede4b21a430fad9384db3517806d
 👉 출처 : [https://gem1n1.tistory.com/46?category=784306](https://gem1n1.tistory.com/46?category=784306)
+https://jishushu.tistory.com/6
