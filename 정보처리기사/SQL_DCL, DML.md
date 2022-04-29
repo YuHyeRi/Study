@@ -70,7 +70,6 @@ ROLLBACK TO 세이브포인트명;
 
 <aside>
 💡 SELECT, INSERT, UPDATE, DELETE
-
 </aside>
 
 #### 🟣 노션 링크 : https://www.notion.so/SQL-DCL-DML-345b9ccb0d0540a88f89c1ed4d722215
