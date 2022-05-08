@@ -20,7 +20,6 @@
 
 - 사물은 다이어그램 안에서 관계가 형성될 수 있는 대상들을 말함
 - 모델을 구성하는 가장 중요한 기본 요소임
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/304af040-b8de-426b-9528-88d8fa21d495/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033512Z&X-Amz-Expires=86400&X-Amz-Signature=256cf07d9ceb911e88f2dc6e39db27a97b04348a6bc7018c824eb1b5bb736c1b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 
 ---
@@ -40,13 +39,6 @@
  → 양방향 관계의 경우 화살표를 생략하고 실선으로만 연결
 
  → 다중도를 선 위에 표기함
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e4fe455d-7833-4223-b20f-f35dce0713b6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033532Z&X-Amz-Expires=86400&X-Amz-Signature=d0ba93e8f724d8b66cf1c12d9e600bf7ec6190c61a33eef4b5b2214fa32fb1dd&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/da96d43b-ad0a-4678-b926-7ee2a8bcf3b6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033553Z&X-Amz-Expires=86400&X-Amz-Signature=c96ee8c710ceba8685f94607abd84ad9581bb5cc2427f762586bbdb0ee25f358&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
-
 
 ### *2. 집합 (Aggregation) 관계*
 
@@ -106,8 +98,6 @@
 - 시스템을 구성하는 요소에 대해 이해할 수 있는 구조적 다이어그램임
 - 시스템 구성 요소를 문서화하는데 사용됨
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b8b06df2-5c91-409c-a6b3-60c3c8beb0fa/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033614Z&X-Amz-Expires=86400&X-Amz-Signature=890050209f85868d6fba1e245092c9f85107f3d903000373db94e427a174e347&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
 
 - *정적 모델링*
     
@@ -153,7 +143,6 @@
 - 사용자의 요구를 분석하는 것으로 기능 모델링 작업에 사용함 (사용자의 관점에서 표현)
 - 사용자(Actor)와 사용사례(Use Case)로 구성됨
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b07fc0f4-ccf9-4122-8062-4683c1522e75/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033658Z&X-Amz-Expires=86400&X-Amz-Signature=ed8dcf876b1298f618de978f3c74d41e9de11d2992a8ce1d474bb117f7acc3a4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 
 1. ***시퀀스 다이어그램***
@@ -170,9 +159,6 @@
     
     → 종류 : 시퀀스 다이어그램, 커뮤니케이션 다이어그램, 상태 다이어그램
     
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/caaaff14-d945-4497-aa22-dbe7d85c57fa/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033717Z&X-Amz-Expires=86400&X-Amz-Signature=6b804f18485ca0978e3bed03067793d64bec574f28e60fa4af5583d389e0542e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
 
 1. ***커뮤니케이션 다이어그램***
 - 동작에 참여하는 객체들이 주고받는 메시지와 객체들 간의 연관 관계를 표현함
@@ -196,8 +182,6 @@
 
 - 스테레오 타입은 UML에서 표현하는 기본 기능 외에 추가적인 기능을 표현하는 것
 - 길러멧(Guilemet)이라고 부르는 겹화살괄호 ( << >> ) 사이에 표현할 형태를 기술
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7b6d385b-5fbd-4b7e-b7f2-ab84e87302f7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220407%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220407T033741Z&X-Amz-Expires=86400&X-Amz-Signature=2dc851946ea6962df416fdfed4173eb4ebae390c3919d8292a9462408024e202&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 
 #### 👉 노션링크 : https://www.notion.so/UML-c8d1320ef72c4ed6b887e0fb883227da
