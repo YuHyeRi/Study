@@ -1,8 +1,5 @@
 ### - jar와 war (+EAR)
 
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ed3aab10-6d38-476d-bfbe-26a6322c5702/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220302T034529Z&X-Amz-Expires=86400&X-Amz-Signature=27744f67b4fdfe47dbbf6e448890463313d7400e0d8a0d2ad1ad67b9ab287725&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
 ## 👻 JAR (Java Archive)
 
 .jar 확장자 파일에는 class와 같은 Java 리소스와 속성파일, 라이브러리 및 액세서리 파일이 포함되어 있다. 쉽게 JAVA 어플리케이션이 동작할 수 있도록 **자바 프로젝트를 압축한 파일**로 생각면 된다. 실제로 **JAR파일은 플랫폼에 귀속되는 점만 제외하면 WIN ZIP파일과 동일한 구조**이다.
