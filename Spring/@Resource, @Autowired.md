@@ -12,8 +12,6 @@
 
 → Java에서 지원하는 어노테이션으로 특정 프레임워크에 종속적이지 않다.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6198b4cf-3f95-4f78-a498-c53361fe6a12/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220210T065025Z&X-Amz-Expires=86400&X-Amz-Signature=a42b850f9ad88de9dae5f6e94e8f7ab9242887449fef1d7c2bb5fb437a32e4ff&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
 name 속성의 이름을 기준으로 찾는다.
 
 없으면 타입, 없으면 @Qualifier 어노테이션의 유무를 찾아 그 어노테이션이 붙은 속성에 의존성을 주입한다.
@@ -28,7 +26,6 @@ name 속성의 이름을 기준으로 찾는다.
 
 → Spring에서 지원하는 어노테이션
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9eec20fa-c893-47cf-8541-aa43f27ac026/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220210%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220210T065042Z&X-Amz-Expires=86400&X-Amz-Signature=a9cea19bbc2e00ff7288608df234be90e646aa50a1283fff24a0f377c7c3c0aa&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 @Autowired는 주입하려고 하는 객체의 타입이 일치하는지를 찾고 객체를 자동으로 주입한다.
 
