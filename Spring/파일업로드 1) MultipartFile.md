@@ -37,8 +37,6 @@ YAML은 모든 데이터를 리스트, 해쉬, 스칼라 데이터의 조합으�
 
 - **장점 : 계층구조로 표현되어 있어 가독성이 좋고, 불필요한 소스의 중복도 제거되며, 들여쓰기, 띄어쓰고 구분하여 보기 편하고 깔끔하다**
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/69dc939d-e56b-474c-b77e-4eab40fdb0b7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T033456Z&X-Amz-Expires=86400&X-Amz-Signature=b55faf0eb0c0d4f110bf0c39a37cb7c18245d517368ced5538d90cc1fe22c1b2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
 출처 : [https://kitty-geno.tistory.com/76](https://kitty-geno.tistory.com/76)
 
 </aside>
@@ -69,9 +67,6 @@ location을 설정하지 않으면 System.getProperty(”java.io.tmpdir”); 경
 
 요청 처리 후에는 파일이 삭제되도록 되어있지만, 운영하다보면 결국 남아있는 것은 어떤 이유로던 남게 되어 있다. 그럴 경우에는 삭제 처리를 별도로 해야 하기 때문에 작업과 관리가 용이하도록 **경로를 직접 설정해주는 것이 좋다.**
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f5de6817-a49e-4c65-80f0-4cfe6241bd4c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T033524Z&X-Amz-Expires=86400&X-Amz-Signature=ba1b7c65c986a5ae837295ae9d03193d8e225a10b22a275deb71dc25f9abb201&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
-
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d5181b79-263c-4d26-9451-a6d9e7e73622/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T033543Z&X-Amz-Expires=86400&X-Amz-Signature=d1e218450e1a4fa11d15fc25376a676b8a2ccae1a34e334824a0eb73f7f11000&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 ### 👧 파일 뿐 아니라, 일반 필드도 같이 보내야할 경우는?
 
@@ -91,7 +86,6 @@ public List<String> upload(@RequestPart List<MultipartFile> files,
 }
 ```
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0e0c92e2-bb0c-4a65-b4ae-e4e8b44599de/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220219%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220219T033601Z&X-Amz-Expires=86400&X-Amz-Signature=685717c1ae0e460e04078a17f91d4f811709436372b3691538efa6ffddec0bda&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 ### 🌸 FileController
 
@@ -119,5 +113,3 @@ public class FileVo {
 ```
 
 #### 👉 노션 : https://www.notion.so/1-MultipartFile-5cb23fea51c64f419a71f191b24ec504
-
-끝.
