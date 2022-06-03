@@ -1,6 +1,6 @@
 # [Spring Security] ****Authentication의 매커니즘****
 
-https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8967026e-1b62-46bd-ac86-6ddf61c8717a/Untitled.png
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8967026e-1b62-46bd-ac86-6ddf61c8717a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T222614Z&X-Amz-Expires=86400&X-Amz-Signature=f21d8f6457a661ee70cfc137954e019643fe942e3f11fc72eaa0d6c39ea9c81a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 - **Authentication**에는 인증된 결과 뿐만 아니라 *인증을 하기 위한 정보*, *인증을 받기 위한 정보*가 
 하나의 객체에 들어있다.
@@ -22,7 +22,7 @@ https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8967026e-1b62-46bd-a
 
 ### ***AuthenticationProvider***
 
-(https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66c3a544-b909-4adc-9ece-60699a654c09/Untitled.png
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/66c3a544-b909-4adc-9ece-60699a654c09/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220603%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220603T222523Z&X-Amz-Expires=86400&X-Amz-Signature=7f42a4bf8e3ca4b11a6855b4d4e0144e71e3f257190ed741d0c91366b6f55679&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 - Authentication을 제공하는 것을 Authentication Provider라고 한다.
 - Authentication Provider는 credentials이나 Principal이 있는 Authentication을 받아서 인증하고
