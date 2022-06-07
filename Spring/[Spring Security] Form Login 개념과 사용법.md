@@ -18,6 +18,8 @@ Login 페이지를 return 하게 된다.
 세션에 저장된 인증 토큰으로 접근을 할 수 있게 되며 세션에 인증 토큰이 있는 동안은 해당 사용자가 인증된 사용자라 판단하여 인증을 유지하게 된다.
 
 
+
+
 ## *Form Login 사용하기*
 
 Form Login  사용은 앞서 [기본 동작 구조 이해하기](https://www.notion.so/Spring-Security-a839666059d54d9b855c0f9010921c0a)의 ‘사용자 기능 정의하기’ 파트에서 설명한 `configure()` 메서드를 재정의하는 곳에 작성한다.
@@ -90,6 +92,38 @@ root 페이지로 이동하게 된다.
 리다이렉트되어 이동하게 된다.
 - **permitAll()** : http.authorizeRequests().anyRequest().authenticated(); 와 같이 인가(Authorization) 관련 코드가 있다고 할 때 만약 인증을 받지 않았다면, 어떤 Request들도 접근이 불가능하다. 
 그러면 우리가 로그인 페이지로 사용할 loginPage도 인증을 받지 않으면 접근이 불가능한데 permitAll을 붙여주면 해당 경로는 인증을 받지 않아도 누구나 접근이 가능해진다.
+
+
+
+
+## *Form Login 인증 필터 동작 과정*
+
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ad1aa138-35de-4adc-9183-06f5da50be03/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220607T020147Z&X-Amz-Expires=86400&X-Amz-Signature=6d1fb91dcca3f416ebc5fbeefcc097b9cd429b9d9a3a4a02c9d6958d3cc52ec4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
+
+1. Form Login을 사용하게 된다면 인증 필터인 *UsernamePasswordAuthenticationFilter*가 실행된다.
+2. *AntPathRequestMatcher*는 요청 정보의 url이 해당 값으로 시작되는지 체크하며, 요청 정보가
+일치하지 않는다면 2-1인 Filter로 이동한다.
+    
+    (※ url의 값은 .loginProcessingUrl(”/login”)의 값 변경에 따라 변경된다.)
+    
+3. 요청 정보가 일치하면 Username과 Password 정보가 담긴 *Authentication* 객체를 생성하여
+*AuthenticationManager*에 넘긴다.
+4. *AuthenticationManager*는 이전 과정에서 받은 *Authentication* 객체를 *AuthenticationProvider*에 
+넘겨주어 인증을 체크하도록 한다.
+5. *AuthenticationProvider*는 실질적으로 인증을 체크하는 역할을 한다.
+**인증 성공시** 최종적인 Authenticatoin 객체를 생성하여 Authenticatoin 객체를 넘기며,
+**인증 실패시** 5-1의 AuthenticationException을 호출하여 UsernamePasswordAuthenticationFilter가 시작된 초기 부분으로 이동하게 된다.
+6. *AuthenticationManager*는 *AuthenticationProvider*로부터 받은 *최종 Authentication* 객체를 다음 과정으로 넘겨준다.
+7. 최종 Authentication 객체는 *Security Context*에 저장된다.
+8. Security Context에 저장된 후에는 *SuccessHandler*를 호출하여 실행하게 된다.
+
+이 후에는 `SecurityContextHolder.getContext().getAuthentication()`코드를 통해 인증 객체를 
+꺼내서 쓸 수 있다.
+
+👧🏻 최종 Authentication 객체는 [Authentication의 구조](https://www.notion.so/Spring-Security-Authentication-d94dfe048e784116a4d5dc72a6d66795)에서 Authentication에 들어가는 내용 부분을 통해 확인할 수 있습니다.
+
+
+
 
 #### 👉 출처 : [https://velog.io/@seongwon97/Spring-Security-Form-Login](https://velog.io/@seongwon97/Spring-Security-Form-Login)
 #### 👉 노션 : https://www.notion.so/Spring-Security-Form-Login-ae3fee95a94d4feb94e64f27a7cc5dc9
