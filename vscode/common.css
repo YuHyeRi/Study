@@ -1,0 +1,37 @@
+/* 보통 기본적으로 함 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 위아래, 양옆 */
+#wrap {
+    padding: 0 15px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+/* 이미지를 양 옆에 나란히 두기 위해서 flex */
+#wrap > .container > div {
+    display: flex;
+}
+
+/* relative : static을 기준으로 */
+/* relative가 엄마라면 absolute는 자식 (앱솔루트는 relative 기준으로 움직임) */
+#wrap > .container > div > div {
+    border: 1px solid gray;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* absolute는 top, left, right, bottom 으로 위치 조정  */
+#wrap > .container > div > div > div {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+}
