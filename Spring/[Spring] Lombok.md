@@ -56,7 +56,7 @@
 
 프로젝트 생성시에 아래 사진과 같이 Developer Tools에 위치한 Lombok을 선택하여 프로젝트를 생성해준다.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8d3aade2-7bf1-46f0-a3e3-686e2824dfc6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220616%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220616T000706Z&X-Amz-Expires=86400&X-Amz-Signature=59f1a45a05927fdeccc0f2a875c851907198b6b9e2713abb919f7e6ca892cbdc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8d3aade2-7bf1-46f0-a3e3-686e2824dfc6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220616%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220616T000706Z&X-Amz-Expires=86400&X-Amz-Signature=59f1a45a05927fdeccc0f2a875c851907198b6b9e2713abb919f7e6ca892cbdc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 만약 프로젝트 생성시에 추가를 못하였다면 **build.gradle**의 dependencies에 아래의 코드를 추가한 후 dependency update를 해준다.
 
