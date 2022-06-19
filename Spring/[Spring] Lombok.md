@@ -66,6 +66,109 @@ annotationProcessor 'org.projectlombok:lombok'
 ```
 
 ---
+
+### ***Lombok사용 예제***
+
+***@Getter, @Setter***
+
+```java
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
+```
+
+Lombok을 사용하지 않는다면 우리는 User class에서 getter, setter 메서드를 구현하기 위해 
+위와 같이 변수를 하나씩 선언해주어야 한다. User class에서 변수가 4개라도 getter, setter를 만드는데만 8개의 메서드가 만들어졌으니 실제 DTO를 생성하다보면 훨씬 더 많은 변수들을 만들게 될 것이고 그에 따라 선언하는 메서드의 수도 크게 늘어날 것이다.
+
+이러한 코드들은 Lombok의 @Getter, @Setter 어노테이션을 사용하면 코드를 단순화 시킬 수 있다.
+
+```java
+@Getter
+public class User {
+    
+@Setter
+private String name;
+private String email;
+private LocalDateTime createdAt; // 생성된 시간
+private LocalDateTime updatedAt; // 업데이트된 시간
+}
+```
+
+@Getter, @Setter는 전체 클래스에 할 수도 있으며 특정 변수에만 지정할 수도 있다. 특정 변수에 
+대해서만 지정할 경우 위의 name에 위치한 @Setter처럼 변수위에 지정하면 된다.
+
+***@ToString***
+
+```java
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
+}
+```
+
+ToString의 경우도 Overriding을 하며 새로 지정해야 하는 번거로움이 있었으나 Lombok을 사용하면 아래와 같이 @ToString 어노테이션을 붙임으로서 단순화시킬 수 있다. 
+@ToString(exclude = "regionMoneyName")와 같이 특정 변수를 제외시킬 수도 있다.
+
+```java
+@ToString
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+}
+```
+
+추가 중
+
 <br>
 👉 노션 : https://www.notion.so/Lombok-e4e1e338706649a0b22475484480e375
 <br>
