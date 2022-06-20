@@ -167,7 +167,48 @@ public class User {
 }
 ```
 
-추가 중
+***@NoArgsConstructor***
+
+파라미터 없이 생성되는 기본 생성자를 생성해주는 어노테이션
+
+```java
+@NoArgsConstructor
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+    // public User() { }  해당 코드가 생략된다.
+}
+
+User user = new User();
+```
+
+***@AllArgsConstructor***
+
+@NoArgsConstructor가 아무런 변수를 받지 않는 생성자를 만들어주는 어노테이션이었다면,
+@AllArgsConstructor는 객체가 가지고 있는 모든 변수를 받는 생성자를 만들어준다.
+
+```java
+@AllArgsConstructor
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+//    아래의 constructor를 @AllArgsConstructor이 대신 만들어준다.
+//    public User(String name, String email, LocalDateTime createdAt, LocalDateTime updatedAt) {
+//        this.name = name;
+//        this.email = email;
+//        this.createdAt = createdAt;
+//        this.updatedAt = updatedAt;
+//    }
+}
+```
+
+추가중
 
 <br>
 👉 노션 : https://www.notion.so/Lombok-e4e1e338706649a0b22475484480e375
