@@ -132,6 +132,8 @@ private LocalDateTime updatedAt; // 업데이트된 시간
 @Getter, @Setter는 전체 클래스에 할 수도 있으며 특정 변수에만 지정할 수도 있다. 특정 변수에 
 대해서만 지정할 경우 위의 name에 위치한 @Setter처럼 변수위에 지정하면 된다.
 
+<br><br>
+
 ***@ToString***
 
 ```java
@@ -166,6 +168,7 @@ public class User {
 
 }
 ```
+<br><br>
 
 ***@NoArgsConstructor***
 
@@ -184,6 +187,7 @@ public class User {
 
 User user = new User();
 ```
+<br><br>
 
 ***@AllArgsConstructor***
 
@@ -207,8 +211,66 @@ public class User {
 //    }
 }
 ```
+<br><br>
 
-추가중
+***@RequiredArgsConstructor, @NonNull***
+
+꼭 필요한 변수만을 사용하는 생성자를 만들어주는 어노테이션. 
+필수적으로 사용되어야 하는 변수들은 @NonNull을 붙여서 설정한다. 
+아니면 해당 변수를 final로 선언해도 의존성 주입 가능하다.
+
+```java
+@RequiredArgsConstructor
+public class User {
+    @NonNull                // @RequiredArgsConstructor에서 사용될 field들을 지정
+    private String name;
+    
+    @NonNull
+    private String email;
+    
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+
+//    public User(String name, String email) {
+//        this.name = name;
+//        this.email = email;
+//    }
+}
+```
+<br><br>
+
+***@EqualsAndHashCode***
+
+equals method와 hashcode method를 자동으로 생성해준다. 서로 *다른 두 객체에서 특정 변수의 
+이름이 똑같은 경우* 같은 객체로 판단하고 싶은 경우 사용하면 된다.
+
+```java
+@EqualsAndHashCode(of = {"name", "email"})
+public class User {
+    private String name;
+    private String email;
+    private LocalDateTime createdAt; // 생성된 시간
+    private LocalDateTime updatedAt; // 업데이트된 시간
+}
+```
+
+위 코드에서는 다른 객체에서도 name, email이 동일하다면 같은 객체로 인식하겠다라는 의미를 가진다.
+<br><br>
+
+***@Data***
+
+엔티티 객체를 사용하며 실습을 할 때 가장 많이 사용 된다.
+@Data는 @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode 를 
+모두 포함하는 어노테이션이다. 그러나 실무에서는 너무 무겁고 객체의 안정성을 지키기 때문에 
+해당 어노테이션의 사용은 지양한다고 한다.
+<br><br>
+
+***@Builder***
+
+다수의 필드를 가지는 복잡한 클래스의 경우, 생성자 대신 빌더를 사용하는 경우가 많다. @AllArgsConstructor와 비슷하게 객체를 생성하고 변수값을 주입해주는데 객체의 생성을 빌더의 
+형식으로 제공해준다. 모든 변수들에 대해 빌드 하기를 원한다면 클래스 위에 해당 어노테이션을 
+붙이고, 특정 변수에 대해 빌드하기를 원한다면 생성자를 작성하고 그 위에 해당 어노테이션을 
+붙여준다.
 
 <br>
 👉 노션 : https://www.notion.so/Lombok-e4e1e338706649a0b22475484480e375
