@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- jQuery cdn add  -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>test page</h1>
+	<div id="test"></div>
+	<button id="btn">버튼</button>
+
+
+	<script>
+		$(function() {
+			
+			$("#btn").click(function() {
+				// console.log("test")
+				$.ajax({
+					//요청 메소드 방식
+					type : 'GET',
+					// 요청 url
+					url : 'http://localhost:8081/ajax',
+					 //서버가 요청 URL을 통해서 응답하는 내용의 타입
+					dataType : "text",
+					// 서버의 응답데이터가 클라이언트에게 도착하면 자동으로 실행되는함수(콜백)
+					success : function(result) {
+						console.log(result)
+						// 응답데이터
+						//$('#result').text(result);
+						$('#test').text(result);
+					},
+					//통신 실패시 발생하는 함수(콜백)
+					error : function(a, b, c) {
+						alert(a + b + c);
+					}
+				});
+			})
+		})
+	</script>
+</body>
+</html>

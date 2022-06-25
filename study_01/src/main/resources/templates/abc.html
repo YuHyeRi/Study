@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn">클릭</button>
+	<div class="container"></div>
+</body>
+	<script>
+		$(function() {
+			$('#btn').click(function() {
+				$.ajax({
+					type : 'GET',							// get타입으로 요청하고
+					url : 'http://localhost:8081/abcAjax',	// 해당 url주소를 요청하고
+					dataType : "text",						// 데이터는 text로 요청한다.
+					success : function(result) {	
+						console.log(result)
+						$('.container').text(result);
+					},
+					error : function(a, b, c) {
+						alert(a + b + c);
+					}
+				})
+			})
+		})
+	</script>
+</html>
