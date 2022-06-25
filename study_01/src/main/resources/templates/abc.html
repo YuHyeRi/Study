@@ -18,9 +18,27 @@
 					type : 'GET',							// get타입으로 요청하고
 					url : 'http://localhost:8081/abcAjax',	// 해당 url주소를 요청하고
 					dataType : "text",						// 데이터는 text로 요청한다.
-					success : function(result) {	
-						console.log(result)
-						$('.container').text(result);
+					success : function(list) {	
+						console.log(typeof(list))
+						var html ="";
+						var test01 = list.length
+						var test02 = test01.substring(1,109)
+// 						console.log(test02.replace(",", "<br>"))
+
+						
+						
+						
+						for(var data of list) {
+							html += '<div>' + data + '</div>';
+						}
+						alert(html)
+// 						$(".container").text(html);
+						
+// 						for(var data of list) {
+// 							html += data.BOARD_TITLE;
+// 						}
+						
+						
 					},
 					error : function(a, b, c) {
 						alert(a + b + c);
