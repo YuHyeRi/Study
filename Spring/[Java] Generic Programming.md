@@ -1,6 +1,6 @@
 # [Java] ****Generic Programming****
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7ba92770-391d-4862-9ed9-b0b7c9a89fdf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220628%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220628T004950Z&X-Amz-Expires=86400&X-Amz-Signature=c82c39cacfce0f234065bd8858e0d9e57f7acc0a18d9dbacf972dbac514be191&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7ba92770-391d-4862-9ed9-b0b7c9a89fdf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220629%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220629T013955Z&X-Amz-Expires=86400&X-Amz-Signature=bf96af1cbb3fd9b53dc8f4246c70e3a7e02237fbc7306511c2db205cf0e6e8ef&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 ### ***Generic class / Programming***
 
@@ -16,12 +16,11 @@
 - Collection Framework에서 많이 사용되고 있다.
 
 즉, 자료형을 특정하지 않아 사용할 때 원하는 자료형을 선언하여 사용하게 해주는 변수를 Generic class라고 하며 해당 변수를 사용하는 프로그래밍을 Generic Programming이라고 한다.
-<br>
 
-<aside>
-💡 제네릭 프로그래밍은 데이터 형식에 의존하지 않고, 하나의 값이 여러 다른 데이터 타입들을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방식이다.
-</aside>
-<br><br>
+
+💡 ***제네릭 프로그래밍***은 데이터 형식에 의존하지 않고, 하나의 값이 여러 다른 데이터 타입들을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방식이다.
+
+---
 
 ### ***Generic class 사용법***
 
@@ -54,8 +53,151 @@
     			this.material = material;
     }
     ```
-    <br><br>
     
+    ---
+    
+    ### ***Generic class를 사용하지 않는 경우***
+    
+    *Powder.java*
+    
+    ```java
+    package ch06;
+    
+    public class Powder {
+    	public String toString() {
+    		return  "재료는 powder입니다. ";
+    	}
+    }
+    ```
+    
+    *ThreeDPrinter1.java*
+    
+    ```java
+    package ch06;
+    
+    public class ThreeDPrinter1 {
+    	private Powder material;
+    
+    	public Powder getMaterial() {
+    		return material;
+    	}
+    
+    	public void setMaterial(Powder material) {
+    		this.material = material;
+    	}
+    	
+    	public String toString() {
+    		return "재료는 Powderrf 입니다.";
+    	}
+    }
+    ```
+    
+    위의 Powder class와 비슷한 다른 객체를 생성하는 경우 TheeDPrinter 코드도 해당 class가 
+    생성됨에 따라 따로 만들어져야 한다. 또는 아래 코드와 같이 Object를 사용할 수도 있다. 
+    그러나 Object의 경우 인스턴스를 생성하고 사용할 때 형변환을 해주어야 하는 번거로움이 있다.
+    
+    *ThreeDPrinter3.java*
+    
+    ```java
+    package ch06;
+    
+    public class ThreeDPrinter3 {
+    	private Object material;
+    
+    	public Object getMaterial() {
+    		return material;
+    	}
+    
+    	public void setMaterial(Object material) {
+    		this.material = material;
+    	}
+    	
+    	public String toString() {
+    		return "재료는 Powderrf 입니다.";
+    	}
+    }
+    ```
+    
+    *ThreeDPrinterTest.java*
+    
+    ```java
+    package ch06;
+    
+    public class ThreeDPrinterTest {
+    
+    	public static void main(String[] args) {
+    		// TODO Auto-generated method stub
+    		
+    		Powder powder = new Powder();
+    		ThreeDPrinter3 printer = new ThreeDPrinter3();
+    		
+    		printer.setMaterial(powder);
+    		Powder p = (Powder)printer.getMaterial();
+    		// ThreeDPrinter3의 경우는 Object type을 이용하여 material을 만들었는데
+    		// 이럴 경우 형 변환을 해줘야해서 번거로움이 발생한다.
+    		// 그래서 generic programming이 생겨났다.
+    		
+    	}
+    }
+    ```
+    
+    ---
+    
+    ### ***Generic class를 사용한 코드***
+    
+    *GenericPrinter.java*
+    
+    ```java
+    package ch06;
+    
+    public class GenericPrinter<T> {
+    	// T는 자료형 매개변수로 이 클래스를 사용하는 시점에 실제 사용할 자료형을 지정하며 static 변수는 사용할 수 없다
+    	
+    	private T material;
+    	// 나중에 사용할 때 사용할 자료형을 입력하면 해당 자료형으로 생성된다.
+    
+    	public T getMaterial() {
+    		return material;
+    	}
+    
+    	public void setMaterial(T material) {
+    		this.material = material;
+    	}
+    	
+    	public String toString() {
+    		return material.toString();
+    	}
+    }
+    ```
+    
+    *GenericPrinterTest.java*
+    
+    ```java
+    package ch06;
+    
+    public class ThreeDPrinterTest {
+    
+    	public static void main(String[] args) {
+    		// TODO Auto-generated method stub
+    		
+    		Powder powder = new Powder();
+    		ThreeDPrinter3 printer = new ThreeDPrinter3();
+    		
+    		printer.setMaterial(powder);
+    		Powder p = (Powder)printer.getMaterial();
+    		// ThreeDPrinter3의 경우는 Object type을 이용하여 material을 만들었는데
+    		// 이럴 경우 형 변환을 해줘야해서 번거로움이 발생한다.
+    		// 그래서 generic programming이 생겨났다.
+    		
+    	}
+    
+    }
+    ```
+    
+    ※ 그 외 코드는 위와 중복되어 생략
+    
+    
+    <br><br>
     👉 notion : https://www.notion.so/Java-Generic-Programming-487bdcfbce2c421d954e387453fdb3e6
     <br>
     👉 Reference : [https://velog.io/@seongwon97/Java-Generic-Programming-제너릭-프로그래밍](https://velog.io/@seongwon97/Java-Generic-Programming-%EC%A0%9C%EB%84%88%EB%A6%AD-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
