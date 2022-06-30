@@ -195,9 +195,75 @@
     ```
     
     ※ 그 외 코드는 위와 중복되어 생략
+
+---
+
+### ***T 자료형의 범위 제한***
+
+- <T extends 클래스>를 사용하면 T 자료형의 범위를 제한할 수 있다.
+- Generic class에 상위 클래스 상속을 할 경우 T에는 상속을 받은 class(자료형)으로만 생성이 가능하다.
+- 상속을 받지 않은 경우 T는 object로 변환되어 object 클래스가 기본으로 제공하는 메서드만 사용 가능하다.
+- extends를 사용함으로써 사용할 수 있는 class에 대해 제한을 걸어두고 공통으로 사용하는 메서드들을 지정해 줄 수도 있다.
+
+*Material.java*
+
+```java
+package ch07;
+
+//Generic class의 제한을 걸기 위한 class로 해당 class는 직접 쓸 일이 없기에 abstract로 생성하였다.
+public abstract class Material {
+			public abstract void doPrinting();
+}
+```
+
+*Plastic.java*
+
+```java
+package ch07;
+
+public class Plastic extends Material {
+	public String toString() {
+		return  "재료는 plastic 입니다. ";
+	}
+
+	@Override
+	public void doPrinting() {
+		// TODO Auto-generated method stub
+		
+	}	
+}
+```
+
+*GenericPrinter.java*
+
+```java
+package ch07;
+
+public class GenericPrinter<T extends Material> {
+	// extends Material을 하여 T에 대한 제한을 하였다.
+	// Material을 상속받은 Class(자료형)으로만 생성 가능하다!!
+	
+	private T material;
+	// 나중에 사용할 때 사용할 자료형을 입력하면 해당 자료형으로 생성된다.
+
+	public T getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(T material) {
+		this.material = material;
+	}
+	
+	public String toString() {
+		return material.toString();
+	}
+}
+```
+
+※ 그 외 코드는 위와 중복되어 생략
     
+   <br>
     
-    <br><br>
-    👉 notion : https://www.notion.so/Java-Generic-Programming-487bdcfbce2c421d954e387453fdb3e6
+👉 notion : https://www.notion.so/Java-Generic-Programming-487bdcfbce2c421d954e387453fdb3e6
     <br>
-    👉 Reference : [https://velog.io/@seongwon97/Java-Generic-Programming-제너릭-프로그래밍](https://velog.io/@seongwon97/Java-Generic-Programming-%EC%A0%9C%EB%84%88%EB%A6%AD-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+👉 Reference : [https://velog.io/@seongwon97/Java-Generic-Programming-제너릭-프로그래밍](https://velog.io/@seongwon97/Java-Generic-Programming-%EC%A0%9C%EB%84%88%EB%A6%AD-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
