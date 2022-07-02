@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>copy</title>
+</head>
+
+<body>
+    <script>
+        const arrayValue = [1, 2, 3, 4];
+        // Shallow Copy
+        const test = arrayValue;
+
+        // Deep Copy
+        // arrayValue => 1, 2, 3, 4
+        const test2 = [...arrayValue];
+
+        // test
+        console.log("arrayValue === test=> ", arrayValue === test) // true
+        console.log("arrayValue === test2=> ", arrayValue === test2) // false
+    </script>
+</body>
+
+</html>
