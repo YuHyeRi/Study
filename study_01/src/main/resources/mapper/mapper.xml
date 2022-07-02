@@ -2,7 +2,27 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.oracle.study_01.mapper.TestMapper">
-    <select id="testSelect" resultType="String">
-        SELECT BOARD_TITLE from BOARD
-    </select>
+	<resultMap id="selectAll" type="com.oracle.study_01.dto.TestDto">
+		<result column="BOARD_NUM" property="boardNum" />
+		<result column="BOARD_TYPE" property="boardType" />
+		<result column="BOARD_TITLE" property="boardTitle" />
+		<result column="BOARD_COMMENT" property="boardComment" />
+		<result column="CREATOR" property="creator" />
+		<result column="CREATE_TIME" property="creatorTime" />
+		<result column="MODIFIER" property="modifier" />
+		<result column="MODIFIED_TIME" property="modifiedTime" />
+	</resultMap>
+
+	<select id="testSelect" resultType="String">
+		SELECT BOARD_TITLE
+		FROM BOARD
+		ORDER BY BOARD_NUM
+	</select>
+
+	<select id="testSelectAll" resultMap="selectAll">
+		SELECT *
+		FROM BOARD
+		ORDER BY
+		BOARD_NUM
+	</select>
 </mapper>

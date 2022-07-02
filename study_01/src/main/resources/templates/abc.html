@@ -2,49 +2,59 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-		crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
 <body>
-	<button id="btn">클릭</button>
-	<div class="container"></div>
-</body>
+	<button id="btn" type="button" class="btn btn-dark">클릭</button>
+	<div class="container">
+		<table class="table table-hover">
+			<thead>
+				<tr class="table-primary">
+					<th>boardNum</th>
+					<th>boardType</th>
+					<th>boardTitle</th>
+					<th>creator</th>
+					<th>creatorTime</th>
+					<th>modifier</th>
+					<th>modifiedTime</th>
+				</tr>
+			</thead>
+			<tbody class="test">
+			</tbody>
+		</table>
+	</div>
 	<script>
 		$(function() {
 			$('#btn').click(function() {
 				$.ajax({
 					type : 'GET',							// get타입으로 요청하고
 					url : 'http://localhost:8081/abcAjax',	// 해당 url주소를 요청하고
-					dataType : "text",						// 데이터는 text로 요청한다.
-					success : function(list) {	
-						console.log(typeof(list))
-						var html ="";
-						var test01 = list.length
-						var test02 = test01.substring(1,109)
-// 						console.log(test02.replace(",", "<br>"))
-
-						
-						
-						
-						for(var data of list) {
-							html += '<div>' + data + '</div>';
+					success : function(data) {				// javaScript는 타입을 구별하지 않는다. (변수만 쓰는 이유)
+						console.log('list=> ', data)
+						var html = '';
+						for (var i = 0; i < data.length; i++) {
+							html += '<tr><td>' + data[i].boardNum + '</td>';
+							html += '<td>' + data[i].boardType + '</td>';
+							html += '<td>' + data[i].boardTitle + '</td>';
+							html += '<td>' + data[i].creator + '</td>';
+							html += '<td>' + data[i].creatorTime + '</td>';
+							html += '<td>' + data[i].modifier + '</td>';
+							html += '<td>' + data[i].modifiedTime + '</td></tr>';
 						}
-						alert(html)
-// 						$(".container").text(html);
-						
-// 						for(var data of list) {
-// 							html += data.BOARD_TITLE;
-// 						}
-						
-						
+						$('.test').html(html);
 					},
 					error : function(a, b, c) {
-						alert(a + b + c);
+						alert('ajax_fail ' + a + b + c);
 					}
 				})
 			})
 		})
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+	crossorigin="anonymous"></script>
+</body>
 </html>
