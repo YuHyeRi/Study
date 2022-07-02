@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 앱솔루트가 업으면 릴레이브는 쓸일이 없다고 본다.. 그냥 스태틱으로 한다. */
+/* static : 자기자리(태그가 적힌 위치) top, left 등 안됨.. margin, padding으로 움직임, 포지션을 줄 수 없음 */
+/* relative는 자기 기준 (static이랑 차이점은 얘는 top, left 쓸 수 있다), 포지션을 줄 수 있다. */
+#wrap > .container > .popup {
+    position: fixed;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    opacity: 0.5;
+    /* 이거는 외워라 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#wrap > .container > .popup > .img {
+    position: relative;
+}
+
+/* absolute : 자기를 기준으로 relative(엄마)를 찾아감 (공중에 떠있다) */
+/* span */
+.close {
+    position: absolute;
+    /* 반응형이면 퍼센트, 아니면 픽셀 */
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.today_close {
+    position: absolute;
+    margin: 10px;
+    bottom: 0;
+    left: 0;
+    font-weight: bold;
+    border: 1px solid black;
+}

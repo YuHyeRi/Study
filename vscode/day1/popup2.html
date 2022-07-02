@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .popup {
+            position: fixed;
+            border: 1px solid #ebebeb;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup">
+        <h2>반갑습니다.</h2>
+        <!-- label for값과 input id 값을 맞춰주면 두 태그를 서로 연결해줌 -->
+        <input type="checkbox" id="popup">
+        <label for="popup">오늘 하루 안보기</label>  
+        <button class="close">닫기</button>
+    </div>
+    <script>
+        var myPopup = document.querySelector('.popup');
+            checkbox = document.querySelector('#popup');
+            popupClose = document.querySelector('.close');
+
+        // 쿠키 생성
+        function setCookie(name, value, day) {
+            var date = new Date();  // 현재 날짜 지정
+            date.setDate(date.getDate() + day);
+
+            var myCookie = '';
+            // myCookie += 'CookieName=ABC;';
+            myCookie += name + '=' + value + ';';
+            myCookie += 'Expires' + date.toUTCString();
+
+            document.cookie = myCookie; // 쿠키생성,설정
+        }
+        setCookie('ABC.com', 'Main', 3);    // 3일 동안 유지
+
+        // 쿠키 삭제
+        function delCookie(name){       // name = ABCcorp
+            var date = new Date();
+            date.setDate(date.getDate() - 1);   // 현재날짜에서 바로 전날짜
+
+            var setCookie = '';
+            setCookie += name + '=Main;';
+            setCookie += 'Expires=' + date.toUTCString();
+
+            document.cookie = setCookie; // 쿠키생성,설정
+        }
+
+        // 쿠키 확인
+        function chkCookie(name) {
+            var cookies = document.cookie.split(';');
+            console.log(cookies);
+            var visited = false;    // 방문여부
+
+            for(var i in cookies){
+                if(cookies[i].indexOf(name) > -1){
+                   // alert(cookies[i]);
+                    visited = true;  // 방문여부를 ture로 바꿔라
+                    console.log(visited);
+                }
+            }
+            
+            if(visited) {
+                // 재방문일 경우
+                myPopup.style.display = 'none';
+            } else {
+                // 신규방문일 경우
+                myPopup.style.display = 'block';
+            }
+
+        }
+        chkCookie('ABC.com');
+    </script>
+</body>
+</html>
