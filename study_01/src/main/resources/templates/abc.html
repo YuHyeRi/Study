@@ -30,10 +30,10 @@
 		$(function() {
 			$('#btn').click(function() {
 				$.ajax({
-					type : 'GET',							// get타입으로 요청하고
-					url : 'http://localhost:8081/abcAjax',	// 해당 url주소를 요청하고
-					success : function(data) {				// javaScript는 타입을 구별하지 않는다. (변수만 쓰는 이유)
-						console.log('list=> ', data)
+					type: 'GET',							// get타입으로 요청하고
+					url: 'http://localhost:8081/abcAjax',	// 해당 url주소를 요청하고
+					success: function(data) {				// javaScript는 타입을 구별하지 않는다. (변수만 쓰는 이유)
+						// console.log('list=> ', data)
 						var html = '';
 						for (var i = 0; i < data.length; i++) {
 							html += '<tr><td>' + data[i].boardNum + '</td>';
@@ -46,12 +46,25 @@
 						}
 						$('.test').html(html);
 					},
-					error : function(a, b, c) {
+					error: function(a, b, c) {
 						alert('ajax_fail ' + a + b + c);
 					}
-				})
-			})
-		})
+				}); // btn ajax end
+			});	// btn function end
+			
+			$('tbody').click(function() {
+				$.ajax({
+					type: 'GET',
+					url: 'http://localhost:8081/commAjax',
+					success: function(data){
+						alert(data.boardNum);
+					},
+					error: function(a,b,c){
+						alert('error test');
+					}
+				}); // tbody ajax end
+			}); // tbody function end
+		}); // function end
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
 	integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 

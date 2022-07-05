@@ -13,4 +13,6 @@ public interface TestMapper {
 
 	public List<TestDto> testSelectAll();	// testSelectAll와 mapper.xml의 id를 매칭
 
+	public String CommList(TestDto testDto);
+
 }

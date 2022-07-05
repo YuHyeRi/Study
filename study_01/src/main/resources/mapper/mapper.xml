@@ -25,4 +25,11 @@
 		ORDER BY
 		BOARD_NUM
 	</select>
+	
+	<select id="CommList" resultType="String">
+		SELECT BOARD_COMMENT
+		FROM BOARD
+		WHERE BOARD_NUM = #{boardNum}
+	</select>
+	
 </mapper>
