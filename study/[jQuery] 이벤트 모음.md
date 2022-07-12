@@ -56,7 +56,62 @@
 - change() : 이벤트 대상인 입력요소의 값이 변경되고 포커스가 이동하면 이벤트가 발생
     
     (→ 그리고 강제로 change 이벤트를 발생시킬 때도 사용)
+
+<br><br>
     
+    
+## *이벤트 객체*
+
+jQuery의 이벤트 시스템은 W3C표준에 따라 이베트 객체를 정규화한다. 이벤트 핸들러 함수는 jQuery에서 callback 함수에 의해 이벤트 객체를 이벤트 핸들러의 인자로 전달된다. 이벤트 객체로부터 전달받은 인자를 이용하여 이벤트의 특정 값을 받아오거나 이벤트의 기본 동작을 막을 수도 있다.
+
+```jsx
+$('#btn').on('click', function(e) {
+							e.preventDefault();
+							$('.txt1').css({'background-color': '#ff0'});
+});
+```
+
+이벤트 핸들러 함수를 통해 해당 이벤트 실행 시 callback 함수가 실행되게 된다. 이때 함수의 인자로 이벤트 객체(e)를 넘겨주기만 하면 된다. 
+
+아래 코드처럼 편리하게 사용할 수 있다.
+
+```jsx
+var x = e.clientX;
+var y = e.clientY;
+
+var key = e.KeyCode;
+
+e.stopPropagation();
+```
+<br>
+
+### *🟣 마우스 이벤트 -2*
+
+- clientX : 마우스 포인터의 X 좌표값을 반환 (스크롤 이동 거리 무시)
+- clientY : 마우스 포인터의 Y 좌표값을 반환 (스크롤 이동 거리 무시)
+- pageX : 스크롤 X축의 이동한 거리를 계산하여 마우스 포인터의 X 좌표값을 반환
+- pageY : 스크롤 Y축의 이동한 거리를 계산하여 마우스 포인터의 Y 좌표값을 반환
+- screenX : 화면 모니터를 기준으로 마우스 포인터의 X 좌표값 반환
+- screenY : 화면 모니터를 기준으로 마우스 포인터의 Y 좌표값 반환
+- layerX : position을 적용한 요소를 기준으로 마우스 포인터의 X 좌표값 반환
+- layerY : position을 적용한 요소를 기준으로 마우스 포인터의 Y 좌표값 반환
+- button : 마우스 버튼 종류에 따라 값을 반환 (왼:0, 휠:1, 오른:2)
+<br>
+
+### *🟣 키보드 이벤트 -2*
+
+- KeyCode : 키보드의 아스키 코드값을 변환
+- altKey : 이벤트 발생 시 alt 키가 눌렸으면 true, 아니면 false를 반환
+- ctrlKey : 이벤트 발생 시 ctrl 키가 눌렸으면 true, 아니면 false를 반환
+- shiftKey : 이벤트 발생 시 shift 키가 눌렸으면 true, 아니면 false를 반환
+<br>
+
+### *🟣 전체 이벤트*
+
+- target : 이벤트가 전파된 마지막 요소를 가르킨다.
+- cancelBubble : 이벤트 전파를 차단하는 속성으로 기본값은 false이며, true로 설정하면 전파가 차단된다.
+- stopPropagation() : 이벤트의 전파를 차단한다.
+- preventDefault() : 기본 이벤트를 차단한다. 예를 들어 <a>에 클릭 이벤트를 적용하고 사용자가 이벤트를 발생시키면 기본 이벤트가 등록되어 있어 링크 주소로 이동하는데 이런 기본 이벤트를 차단할 수 있다.    
 <br><br>
 👉 노션 : https://www.notion.so/tgmary09/jQuery-c9a54b43d62940d78a11cd6f9e4aaedd
 <br>
