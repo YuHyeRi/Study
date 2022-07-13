@@ -113,6 +113,53 @@ e.stopPropagation();
 - stopPropagation() : 이벤트의 전파를 차단한다.
 - preventDefault() : 기본 이벤트를 차단한다. 예를 들어 <a>에 클릭 이벤트를 적용하고 사용자가 이벤트를 발생시키면 기본 이벤트가 등록되어 있어 링크 주소로 이동하는데 이런 기본 이벤트를 차단할 수 있다.    
 <br><br>
+
+## *이벤트 등록과 해제*
+
+위에서 나온 이벤트를 어떻게 등록해서 사용하면 될까?
+
+### *이벤트 등록*
+
+- ***단독 이벤트 등록 메서드***
+
+```jsx
+$('#btn').click(function(){
+	$('#btn').parent().next()
+	.css({'color': '#f00'});
+});
+```
+
+해당 이벤트를 직접 등록하는 방법으로 한 가지의 이벤트만 필요로 할 때 사용한다.
+
+이제 의문이 하나 들기 시작한다. 하나의 대상에 대해 여러 개의 이벤트를 추가하고 싶다면? 물론 이벤트를 하나씩 다 등록할 수 있지만 같은 callback 함수를 반복해서 코딩하고 싶지는 않을 것이다.
+
+- ***이벤트 등록과 해제 메서드***
+![image](https://user-images.githubusercontent.com/86906680/178651399-b5ffa320-10f8-4c7f-84f1-2e3d9887dc68.png)
+
+***이벤트 등록***
+
+```jsx
+$('#btn').on({
+	'mouseover focus': function() {
+		$('#btn').parent().next()
+		.css({'color':'#f0f0'});
+	},
+```
+
+여러가지 이벤트를 동시에 등록해야 된다면 on 메서드를 사용하면 편리하다. on 메서드의 인자로 원하는 이벤트를 열거하면 된다.
+
+***이벤트 해제***
+
+```jsx
+$('#btn').off('click');
+$('#btn').off('mouserover focus');
+```
+
+등록한 이벤트를 해제하고 싶을 땐 off 메서드를 사용하면 쉽게 해제할 수 있다.
+<br><br>
+	
 👉 노션 : https://www.notion.so/tgmary09/jQuery-c9a54b43d62940d78a11cd6f9e4aaedd
+<br>
+👉 References : [https://api.jquery.com/category/events/](https://api.jquery.com/category/events/)	
 <br>
 👉 출처 : [https://zangzangs.tistory.com/21](https://zangzangs.tistory.com/21)
