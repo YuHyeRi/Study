@@ -74,6 +74,80 @@ $(function(){
 
 따라서 4번 라인에서 또다시 .eq() 메소드를 사용하여 요소를 선택할 수 있게 된다.
 
+---
+
+### *.width() 메소드와 .height() 메소드*
+
+제이쿼리에서는 선택한 요소의 너비나 높이를 반환하거나 설정하기 위한 메소드를 제공한다.
+
+```jsx
+$(function() {
+    $("#getter").on("click", function() {
+1)      var size = "너비는 " + $("#box").width() + "px이고, 높이는 "
+                   + $("#box").height() + "px입니다.<br>";
+        $("#text").html(size);
+    });
+
+    $("#setter").on("click", function() {
+2)      w = $("#box").width();
+3)      h = $("#box").height();
+4)      $("#box").width(w/2).height(h/2);
+
+5)      var size = "너비는 " + $("#box").width() + "px이고, 높이는 "
+6)                  + $("#box").height() + "px로 변경되었습니다.<br>";
+       $("#text").html(size);
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementSelection_access_04](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementSelection_access_04)
+
+선택한 요소의 너비와 높이 값을 얻기 위해 1번부터 3번, 5번과 6번 라인까지 
+.width() 메소드와 .height() 메소드를 getter 메소드로 사용하고 있다.
+
+그러나 4번 라인에서 .width() 메소드와 .height() 메소드는 인수를 전달받아 
+너비와 높이 값을 설정하기 위한 setter 메소드로 사용하고 있다.
+
+---
+
+### ***.attr() 메소드***
+
+.attr() 메소드는 선택한 요소의 특정 속성 값을 반환하거나 설정하기 위해 사용한다.
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        // <img>요소의 src 속성값을 읽어오는 getter 메소드
+1)      var imgSrc = $("img").attr("src");
+        // <img>요소의 src 속성값을 새로운 값으로 설정하는 setter 메소드
+2)      $("img").attr("src", "/examples/images/img_flag.png");
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementSelection_access_05](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementSelection_access_05)
+
+1번 라인에서는 .attr() 메소드에 인수를 하나만 전달하여 해당 html 요소에서 인수로 전달받은 이름의 속성값을 읽어오는 getter 메소드로 사용하고 있다.
+
+그러나 2번 라인에서는 인수를 두 개 전달하여 해당 html 요소에 첫 번째 인수로 전달받은 이름의 
+속성값으로 두 번째 인수로 전달받은 값을 설정하는 setter 메소드로 사용하고 있다.
+
+---
+
+### *대표적인 getter 메소드와 setter 메소드*
+
+요소에 접근하여 요소의 값을 읽거나 설정할 수 있도록 해주는 대표적인 메소드
+
+- .html() : 해당 요소의 html 콘텐츠를 반환하거나 설정함
+- .text() : 해당 요소의 텍스트 콘텐츠를 반환하거나 설정함
+- .width() : 선택한 요소 중에서 첫 번째 요소의 너비를 픽셀 단위의 정수로 반환하거나 설정함
+- .height() : 선택한 요소 중에서 첫 번째 요소의 높이를 픽셀 단위의 정수로 반환하거나 설정함
+- .attr() : 해당 요소의 명시된 속성의 속성값을 반환하거나 설정함
+- .position() : 선택한 요소 중에서 첫 번째 요소에 대해 특정 위치에 존재하는 객체를 반환함 (getter 메소드)
+- .val() : form 요소의 값을 반환하거나 설정함
+
+
+
 
 <br>
 <br>
