@@ -134,6 +134,57 @@ $(function() {
 
 [http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_insert_08](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_insert_08)
 
+---
+<br><br>
+
+### ***기존 요소를 포함하는 요소의 추가***
+
+- ***.wrap()*** : 선택한 요소를 포함하는 새로운 요소를 추가함
+- .**wrapAll()** : 선택한 모든 요소를 포함하는 새로운 요소를 추가함
+- **.wraplnner()** : 선택한 요소에 포함되는 새로운 요소를 추가함
+<br><br>
+
+### ***.wrap() 메소드 → ‘선택한 요소’를 포함하는 새로운 요소를 추가***
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 각 요소를 포함하는 새로운 요소를 추가함.
+        $(".content").wrap("<div class='wrapper'></div>");
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_insert_09](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_insert_09)
+<br><br>
+
+### ***.wrapAll() 메소드 → ‘선택한 모든 요소’를 포함하는 새로운 요소를 추가***
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 모든 요소를 포함하는 새로운 요소를 추가함.
+        $(".content").wrapAll("<div class='wrapper'></div>");
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_insert_10](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_insert_10)
+<br><br>
+
+### ***.wraplnner() 메소드 → ‘선택한 요소에 포함되는’ 새로운 요소를 추가***
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 각 요소에 포함되는 새로운 요소를 추가함.
+        $(".content").wrapInner("<div class='wrapper'></div>");
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_insert_11](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_insert_11)
+
 
 
 <br><br>
