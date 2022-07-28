@@ -42,6 +42,7 @@ $(function() {
 </aside>
 
 ---
+<br><br>
 
 ### ***요소의 대체***
 
@@ -61,6 +62,7 @@ $(function() {
 ```
 
 [http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_cloneDelete_02](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_cloneDelete_02)
+<br>
 
 ***🟣 .replaceWith() : 선택한 모든 요소를 지정된 요소로 대체함***
 
@@ -87,9 +89,76 @@ $(function() {
 </aside>
 
 ---
+<br><br>
 
 ### *요소의 삭제*
 
 선택한 요소나 콘텐츠를 삭제할 수 있다.
 
+***🟣 .remove() : 선택한 요소를 dom 트리에서 삭제함
+ → 삭제된 요소와 연관된 제이쿼리 데이터나 이벤트도 함께 삭제함***
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        // class가 "content"인 요소 중에서 class가 각각 "first", "second"인 요소를 모두 삭제함.
+        $(".content").remove(".first, .second");
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_cloneDelete_04](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_cloneDelete_04)
+<br>
+
+***🟣 .detach() : 선택한 요소를  dom 트리에서 삭제함
+ → 삭제된 요소와 연관된 제이쿼리 데이터나 이벤트는 유지됨***
+
+.detach() 메소드가 반환하는 제이쿼리 객체를 .append()나 .prepend()와 같은 메소드에 
+인수로 전달하면 삭제한 요소를 다시 복구할 수도 있다.
+
+```jsx
+$(function() {
+    var data;
+
+    $("#detachBtn").on("click", function() {
+        data = $(".content").detach(); // class가 "content"인 요소를 모두 삭제함.
+    });
+    $("#restoreBtn").on("click", function() {
+        $("#container").append(data);  // detach() 메소드로 삭제되었던 모든 요소를 다시 추가함.
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_cloneDelete_05](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_cloneDelete_05)
+<br>
+
+***🟣 .empty() : 선택한 요소의 자식 요소를 모두 삭제함***
+
+.remove()나 .detach() 메소드와는 달리 선택된 요소 그 자체는 삭제되지 않는다.
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        $("#container").empty(); // id가 "container"인 요소의 자식 요소를 모두 삭제함.
+   });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_cloneDelete_06](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_cloneDelete_06)
+<br>
+
+***🟣 .unwrap() : 선택한 요소의 부모 요소를 삭제함***
+
+```jsx
+$(function() {
+    $("button").on("click", function() {
+        $("span").unwrap(); // 모든 <span>요소의 부모 요소를 삭제함.
+    });
+});
+```
+
+[http://www.tcpschool.com/examples/tryit/tryhtml.phpfilename=jq_elementManupulating_cloneDelete_07](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementManupulating_cloneDelete_07)
+<br><br>
+👉 노션 : https://www.notion.so/tgmary09/jQuery-ded90be4246b4f88810effc8e745eff2
+<br>
 👉 출처 : [http://www.tcpschool.com/jquery/jq_elementManupulating_cloneDelete](http://www.tcpschool.com/jquery/jq_elementManupulating_cloneDelete)
