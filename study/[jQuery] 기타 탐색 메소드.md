@@ -89,9 +89,7 @@ $(function() {
 
 [http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementDimension_position_04](http://www.tcpschool.com/examples/tryit/tryhtml.php?filename=jq_elementDimension_position_04)
 
-위의 예제에서 아이디가 ‘para’인 요소를 웹 페이지에 위치시킬 때 기준이 되는 부모 요소는 position 속성값이 relative로 설정된 <ul> 요소이다. 이렇게 정적 위치(static position) 지정 방식을 제외한 
-다른 방식(relative, fixed, absolute)으로 위치가 설정된 요소가 위치를 정할 때 기준이 될 수 있다. 
-만약 위와 같은 위치가 설정된 요소가 존재하지 않으면 <html> 요소를 기준으로 삼게 된다.
+위의 예제에서 아이디가 ‘para’인 요소를 웹 페이지에 위치시킬 때 기준이 되는 부모 요소는 position 속성값이 relative로 설정된 <ul> 요소이다. 이렇게 정적 위치(static position) 지정 방식을 제외한 다른 방식(relative, fixed, absolute)으로 위치가 설정된 요소가 위치를 정할 때 기준이 될 수 있다. 만약 위와 같은 위치가 설정된 요소가 존재하지 않으면 <html> 요소를 기준으로 삼게 된다.
 <br>
 
 ### *.contents()*
