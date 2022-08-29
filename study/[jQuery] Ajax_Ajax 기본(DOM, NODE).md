@@ -48,7 +48,7 @@ DOM은 이러한 노드들을 정의하고 그들 사이의 관계를 설명해�
 문서의 정보는 노드 트리라고 불리는 *계층적 구조*에 저장된다. 
 이러한 노드 트리는 노드들의 집합으로 *노드 간의 관계를 보여준다.*
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2df2d0f0-728c-47b6-aac1-ce72fd97237e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220829%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220829T010348Z&X-Amz-Expires=86400&X-Amz-Signature=ae291eb1a074b1a06041e5795493046728cc604d4f83877cf09ead33ac4745e0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2df2d0f0-728c-47b6-aac1-ce72fd97237e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220829%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220829T010348Z&X-Amz-Expires=86400&X-Amz-Signature=ae291eb1a074b1a06041e5795493046728cc604d4f83877cf09ead33ac4745e0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 ### *노드 관의 관계*
 
