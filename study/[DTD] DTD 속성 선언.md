@@ -18,7 +18,7 @@ DTD에서 속성은 다음과 같이 ATTLIST 구문으로 선언할 수 있다.
 
 DTD에서 속성을 선언할 때 사용할 수 있는 속성 타입은 다음과 같다.
 
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f07d74ba-8dce-434b-9bdf-e2615085ef7b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221028%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221028T231548Z&X-Amz-Expires=86400&X-Amz-Signature=889ad7841accb12539655c425a201c972345b1b32033fd9ae92c6dd814dca006&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f07d74ba-8dce-434b-9bdf-e2615085ef7b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221028%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221028T231548Z&X-Amz-Expires=86400&X-Amz-Signature=889ad7841accb12539655c425a201c972345b1b32033fd9ae92c6dd814dca006&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject">
 
 ---
 
