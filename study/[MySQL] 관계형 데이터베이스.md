@@ -86,4 +86,7 @@ Reservation(ID, Name, Date, RoomNum)
 
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a82b9b3f-0b99-416a-afc8-1f239b9c693f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221113%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221113T030748Z&X-Amz-Expires=86400&X-Amz-Signature=d08fcf5437932e375aa71443fc770ab3b5c9e66b52dd030f6e8b3624bbe1c952&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject">
 
+<br><br>
+👉 노션 : https://www.notion.so/tgmary09/MySQL-922d3e0c1d8044ccabce4cda882b87c7
+<br>
 👉 출처 : [http://www.tcpschool.com/mysql/mysql_intro_relationalDB](http://www.tcpschool.com/mysql/mysql_intro_relationalDB)
