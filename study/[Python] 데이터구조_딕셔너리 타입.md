@@ -1,0 +1,158 @@
+# [Python] 데이터구조_딕셔너리 타입
+
+**딕셔너리(dictonary)**
+
+리스트와 튜플 등에서는 정수인 인덱스를 가지고 순차적으로 각 요소에 접근할 수 있었다면, 
+딕셔너리는 단어 그대로의 ‘사전’과 같이 별도로 정의한 키를 통해 각 요소에 접근할 수 있도록 
+만들어진 데이터 타입이다.
+사전에서 단어를 가지고 그 단어의 설명을 찾을 수 있듯이, 딕셔너리에서는 키(key)를 가지고 
+그 키에 해당하는 값(value)을 찾을 수 있다.
+
+<aside>
+💡 대부분의 프로그래밍 언어에서는 파이썬의 딕셔터리와 같이 키와 값으로 구성된 데이터 타입을 맵(map)이라고 부른다.
+
+</aside>
+
+---
+
+**딕셔너리 선언하기**
+
+딕셔너리는 중괄호 {}로 감싸서 선언하며, 딕셔너리의 각 요소들은 쉼표를 사용하여 구분한다.
+이러한 딕셔너리의 요소는 또 다시 키와 값의 한 쌍으로 구성되며, 이 둘은 콜론(:)으로 연결된다.
+
+```python
+딕셔너리명 = {요소1, 요소2, 요소3, ...}
+요소 = 키(key):값(value)
+```
+
+```python
+dict1 = {'하나': 1, '둘': 'two', '파이': 3.14}
+dict2 = dict({'하나': 1, '둘': 'two', '파이': 3.14})
+dict3 = dict([('하나', 1), ('둘', 'two'), ('파이', 3.14)])
+dict4 = dict(하나=1, 둘='two', 파이=3.14)  
+
+print(dict1)
+print(dict2)
+print(dict3)
+print(dict4)
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5f06d08-ffee-43d8-af09-94600024bc2f/Untitled.png)
+
+위의 예제처럼 파이썬 내장 함수인 dict 함수를 사용해도 딕셔너리를 선언할 수 있다. 
+단, 4번 라인처럼 dict 함수의 인수에 대입 연산자(=)를 바로 사용하기 위해서는 키(key)가 문자열이어야만 한다.
+
+딕셔너리의 키(key)는 정수뿐만 아니라 문자열이나 실수 등도 사용할 수 있지만, 리스트나 딕셔너리와 같이 변경할 수 있는 타입의 값은 사용할 수 없다.
+
+```python
+dict1 = {'하나': 1, 2: 'two', 3.14: 'pi'}
+dict2 = {('ten', 10): ['열', 10.0]}  
+
+print(dict1)
+print(dict2)
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6f31b811-bbce-452c-b1ae-cf741cf4d3d8/Untitled.png)
+
+2번 라인처럼 튜플은 그 값을 변경할 수 없는 타입이므로, 딕셔너리의 키로 사용될 수 있다.
+
+---
+
+**딕셔너리 사용하기**
+
+딕셔너리는 대괄호 []를 사용하여 키를 전달함으로써 해당 키로 저장된 값을 얻을 수 있다. 
+또한, 딕셔너리의 내장 함수인 get 함수를 사용해도 같은 결과를 얻을 수 있다.
+
+이 두 방식 간의 차이점은 존재하지 않는 키에 대해 대괄호를 사용하는 방식은 KeyError를 발생시키며 프로그램을 강제종료시키지만, get 함수는 정상적으로 종료되며 None을 반환하는 것 뿐이다.
+
+```python
+dict1 = dict({'자바': 80, 'PHP': 90, 'HTML': 70})  
+
+print(dict1['자바'])
+print(dict1.get('자바'))  
+
+# print(dict1['파이썬'])
+print(dict1.get('파이썬'))
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/82c187a5-de44-4c3b-8f1e-738ef8cf8801/Untitled.png)
+
+<aside>
+💡 None이란 ‘값이 없음’을 나타내는 파이썬의 예약 상수이다.
+
+</aside>
+
+---
+
+**딕셔너리에 요소 추가하거나 제거하기**
+
+딕셔너리에 요소를 추가하려면 대괄호 안에 키를 넣고 대입 연산자를 사용하여 값을 저장하면 된다.
+예를 들어, {’파이썬’:100}이라는 요소를 딕셔너리 dict1에 추가하려면, 다음과 같이 추가할 수 있다.
+
+```python
+dict1['파이썬']=100
+```
+
+또한 del 키워드를 사용하여 딕셔너리에 포함된 특정 요소를 제거할 수 있으며, 
+딕셔너리의 clear 함수를 사용하면 딕셔너리에 저장된 모든 요소들을 한 번에 삭제할 수 있다.
+
+```python
+dict1 = dict({'자바': 80, 'PHP': 90, 'HTML': 70})  
+
+dict1['파이썬'] = 100
+print(dict1) 
+ 
+del dict1['PHP']
+print(dict1)  
+
+dict1['자바'] = 100
+print(dict1)  
+
+dict1.clear()
+print(dict1)
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d7012148-e0c2-41eb-ad83-65bfb9581ff0/Untitled.png)
+
+위 예제의 6번 라인처럼 del 키워드는 함수가 아니므로 소괄호를 사용하지 않는다.
+또한 9번 라인처럼 이미 저장되어 있는 키와 동일한 키를 사용하여 요소를 추가하면, 
+이전에 저장된 값은 지워지고 나중에 추가한 값만이 저장된다.
+10번 라인의 출력에서 확인할 수 있는 ‘자바’라는 키로 저장된 80이라는 값이 9번 라인에 의해 100으로 변경된 것을 확인할 수 있으며, 이를 이용하여 딕셔너리에 저장된 값을 변경할 수 있다.
+
+---
+
+**딕셔너리의 정보 얻기**
+
+딕셔너리의 key 함수를 사용하면 딕셔너리에 저장된 모든 요소의 키를 한번에 얻을 수 있으며, values 함수를 사용하면 딕셔너리에 저장된 모든 요소들의 값을을 따로 얻을 수 있다.
+또한 items 함수는 딕셔너리에 저장된 모든 요소들을 각각 키와 값의 한 쌍으로 이루어진 튜플의 
+형태로 반환한다.
+
+key와 values, items 함수의 반환값은 각각 dict_key와 dict_values, dict_items 객체로서, 
+이 객체들은 list 함수를 사용하여 리스트 타입으로 변환하여 사용할 수 있다. 
+하지만 굳이 리스트로 변환하지 않더라도 반복문 등에 그대로 사용할 수 있다.
+
+```python
+dict1 = dict({'자바': 80, 'PHP': 90, 'HTML': 70})  
+
+print(dict1.keys())
+print(dict1.values())
+print(dict1.items())  
+
+print('HTML' in dict1)
+print('파이썬' in dict1)
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3d98dfe8-4da6-4424-9b80-c17bf92b0c0e/Untitled.png)
+
+위의 예제의 7번과 8번 라인처럼 in 키워드를 사용하여 해당 딕셔너리에 특정키의 포함여부를 
+손쉽게 알 수 있다.
+
+<aside>
+💡 파이썬 2.X 버전까지는 key와 values, items 함수의 반환값이 모두 리스트 타입이었다. 그러나 리스트 타입으로 이들 함수의 결과를 반환하기 위해서는 메모리 낭비가 많이 발생하였기에, 이를 줄이고자 파이썬 3.0 버전부터는 각각 dict_key, dict_values, dict_items 객체로 결과값을 반환하도록 변경되었다.
+
+</aside>
+
+<br><br>
+👉🏻 노션 : https://www.notion.so/tgmary09/Python-_-fbefe8122180431c80a4d4a93b05e471
+<br>
+👉🏻 출처 : [http://www.tcpschool.com/python2018/python_datastructure_dict](http://www.tcpschool.com/python2018/python_datastructure_dict)
