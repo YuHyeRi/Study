@@ -37,7 +37,6 @@ print(dict3)
 print(dict4)
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5f06d08-ffee-43d8-af09-94600024bc2f/Untitled.png)
 
 위의 예제처럼 파이썬 내장 함수인 dict 함수를 사용해도 딕셔너리를 선언할 수 있다. 
 단, 4번 라인처럼 dict 함수의 인수에 대입 연산자(=)를 바로 사용하기 위해서는 키(key)가 문자열이어야만 한다.
@@ -52,7 +51,6 @@ print(dict1)
 print(dict2)
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6f31b811-bbce-452c-b1ae-cf741cf4d3d8/Untitled.png)
 
 2번 라인처럼 튜플은 그 값을 변경할 수 없는 타입이므로, 딕셔너리의 키로 사용될 수 있다.
 
@@ -75,7 +73,6 @@ print(dict1.get('자바'))
 print(dict1.get('파이썬'))
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/82c187a5-de44-4c3b-8f1e-738ef8cf8801/Untitled.png)
 
 <aside>
 💡 None이란 ‘값이 없음’을 나타내는 파이썬의 예약 상수이다.
@@ -112,7 +109,6 @@ dict1.clear()
 print(dict1)
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d7012148-e0c2-41eb-ad83-65bfb9581ff0/Untitled.png)
 
 위 예제의 6번 라인처럼 del 키워드는 함수가 아니므로 소괄호를 사용하지 않는다.
 또한 9번 라인처럼 이미 저장되어 있는 키와 동일한 키를 사용하여 요소를 추가하면, 
@@ -142,7 +138,6 @@ print('HTML' in dict1)
 print('파이썬' in dict1)
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3d98dfe8-4da6-4424-9b80-c17bf92b0c0e/Untitled.png)
 
 위의 예제의 7번과 8번 라인처럼 in 키워드를 사용하여 해당 딕셔너리에 특정키의 포함여부를 
 손쉽게 알 수 있다.
