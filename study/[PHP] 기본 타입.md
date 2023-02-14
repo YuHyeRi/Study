@@ -55,7 +55,7 @@ var_dump((bool) null);    // false
 
 **정수(integer)**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/06dc08f4-3ccc-46ac-bcba-e1d772f94c0a/Untitled.png)
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/06dc08f4-3ccc-46ac-bcba-e1d772f94c0a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230214T020921Z&X-Amz-Expires=86400&X-Amz-Signature=f9022ecdbf6630d5df914d1f7575b8b4b17c71925de5131510453de0ba922143&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject">
 
 ```php
 echo "integer 타입의 크기는 ".PHP_INT_SIZE."바이트 입니다.<br>";
