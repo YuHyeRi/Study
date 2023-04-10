@@ -67,7 +67,7 @@ Exception 클래스는 PHP 5에서 발생하는 모든 예외의 조상 클래�
 
 Exception 클래스는 다음과 같은 프로퍼티와 메소드를 가지고 있다.
 
-<img src="https://file.notion.so/f/s/f2591017-0f20-4326-8bf6-ef60328a0dc7/Untitled.png?id=195f3d68-3c0e-4485-9721-0f40b0d8e498&table=block&spaceId=cbbefbcc-680a-4e93-a93e-800d7ccbe4ee&expirationTimestamp=1681204937120&signature=x6D2VHHwCufSouu0vIOqHn9OKVw38pQOWXps1FIYHhU&downloadName=Untitled.png">
+<img src="https://file.notion.so/f/s/f2591017-0f20-4326-8bf6-ef60328a0dc7/Untitled.png?id=195f3d68-3c0e-4485-9721-0f40b0d8e498&table=block&spaceId=cbbefbcc-680a-4e93-a93e-800d7ccbe4ee&expirationTimestamp=1681204993844&signature=CaSkf0BX78IilVHtYxx0Ce1ppiLbBk4l7otAwp1PBH8&downloadName=Untitled.png">
 
 ```php
 try
